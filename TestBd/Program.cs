@@ -12,7 +12,11 @@ namespace TestBd
                 var date=new DateTime(2015,12,31);
                 var users = db.Accounts.Where(x => x.CreateOn > date);
                 if(users.Count()!=0)
-                    Console.WriteLine(users.First().Name);
+                    foreach (var item in users)
+                    {
+                        Console.WriteLine(item.Name);
+                    }
+                    
             }
         }
     }
